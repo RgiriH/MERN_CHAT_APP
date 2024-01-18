@@ -94,7 +94,7 @@ const SingleChat = ({ fun }) => {
   }
 
   useEffect(() => {
-    socket = io(ENDPOINT)
+    socket = io.connect();
     socket.emit("setup", user)
     socket.on("connected", () => {
       setSocketConnected(true)

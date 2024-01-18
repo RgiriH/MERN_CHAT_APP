@@ -149,7 +149,7 @@ export const SideDrawer = () => {
               </Text>
             </Button>
           </Tooltip>
-          <Text fontSize="2rem" color="#ccc">
+          <Text fontSize={{sm : "0.5rem",md : "1.5rem",xl : "2rem"}} color="#ccc">
             TALK-A-TIVE
           </Text>
           <div
