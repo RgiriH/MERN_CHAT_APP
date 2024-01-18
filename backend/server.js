@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const path = require("path")
 const connectDB = require("./config/db")
 const { notFound, errorHandler } = require("./middleWare/errorMiddleWare")
 
@@ -15,16 +16,29 @@ app.use(express.json())
 
 
 
-app.get('/', (req,res) => {
-    res.send("connected to the server")
-})
+
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRouts)
-app.use("/api/message" , messageRoutes)
+app.use("/api/message", messageRoutes)
 
 
-app.use(notFound);
+//--------------------------------deployment---------------------------
+const __dirname1 = path.resolve();
+if (process.env.NODE_ENV == "production") {
+    app.use(express.static(path.join(__dirname1, "/frontend/build")))
+    app.get('*', () => {
+        res.sendFile(path.resolve(__dirname1,"frontend","build","index.html"))
+    })
+    
+} else {
+    app.get("/", (req, res) => {
+      res.send("connected to the server");
+    });
+}
+  //--------------------------------deployment---------------------------
+
+  app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT_NUMBER || 8000
