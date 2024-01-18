@@ -190,10 +190,10 @@ const GroupChatModel = ({ children , fun}) => {
                           padding="10px"
                           key={node._id}
                           width="100%"
-                          height="60px"
+                          maxHeight ="100px"
                           display="flex"
                           justifyContent="space-between"
-                
+                          overflow="hidden"
                           alignContent="center"
                           borderRadius="5px"
                           bg="#DCDCDC"

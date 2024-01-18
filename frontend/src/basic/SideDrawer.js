@@ -125,6 +125,13 @@ export const SideDrawer = () => {
     localStorage.removeItem("user")
     navigate("/")
   }
+
+  const handleClose = () => {
+    setLoading(false);
+    setSearch("")
+    setSearchData([])
+    onClose()
+  }
     return (
       <>
         <Box
@@ -149,7 +156,9 @@ export const SideDrawer = () => {
               </Text>
             </Button>
           </Tooltip>
-          <Text fontSize={{sm : "0.5rem",md : "1.5rem",xl : "2rem"}} color="#ccc">
+          <Text fontSize={{ sm: "0.5rem", md: "1.5rem", xl: "2rem" }} color="#ccc"
+            margin="auto"
+          >
             TALK-A-TIVE
           </Text>
           <div
@@ -185,7 +194,7 @@ export const SideDrawer = () => {
             </Menu>
           </div>
         </Box>
-        <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <Drawer isOpen={isOpen} placement="left" onClose={handleClose}>
           <DrawerOverlay />
           <DrawerContent >
             <DrawerCloseButton />
