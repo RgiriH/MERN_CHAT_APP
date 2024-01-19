@@ -6,7 +6,7 @@ const UserList = ({ user , handelFunction}) => {
       <Box
         padding="5px"
         display="flex"
-        h="70px"
+        overflow="hidden"
         bg="#DCDCDC"
         borderRadius="10px"
         marginTop="10px"
