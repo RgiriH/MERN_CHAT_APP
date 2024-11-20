@@ -1,6 +1,9 @@
 # Talk-A-Tive  
 **A Real-Time Chat Application with Group Chat Management**
 
+# Live link
+- https://talk-a-tive-qlv3.onrender.com/
+
 ## 📖 Overview  
 
 **Talk-A-Tive** is a full-stack chat application designed to provide seamless real-time communication. It supports one-on-one and group chats, complete with secure authentication and robust group management features. Built with scalability and user experience in mind, this application is perfect for dynamic and interactive messaging.
